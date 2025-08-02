@@ -32,15 +32,49 @@
 <body class="bg-gradient-to-br from-blue-100 to-white min-h-screen font-sans relative">
 
   <!-- LOADING SCREEN -->
-  <div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex items-center justify-center flex-col gap-4">
-    <div class="w-24 h-24 animate-fly">
-      <!-- SVG BURUNG -->
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-        <path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z" fill="#3B82F6"/>
-      </svg>
-    </div>
-    <p class="text-gray-600 text-lg font-medium animate-fadeIn">Memuat halaman...</p>
+<div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-4">
+  <!-- Merpati SVG dengan animasi terbang -->
+  <div class="w-24 h-24 animate-fly">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+      <path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z" fill="#000000"/>
+    </svg>
   </div>
+  <p class="text-gray-600 text-lg font-medium animate-fadeIn">Memuat halaman...</p>
+</div>
+
+<!-- Tailwind CSS Custom Animation -->
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        animation: {
+          fadeIn: "fadeIn 1s ease-in-out forwards",
+          fly: "fly 2s ease-in-out infinite",
+        },
+        keyframes: {
+          fadeIn: {
+            "0%": { opacity: 0, transform: "translateY(10px)" },
+            "100%": { opacity: 1, transform: "translateY(0)" },
+          },
+          fly: {
+            "0%, 100%": { transform: "translateY(0) scale(1)" },
+            "50%": { transform: "translateY(-10px) scale(1.1)" },
+          },
+        },
+      },
+    },
+  };
+</script>
+
+<!-- Script to hide loading after page load -->
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("loadingScreen").classList.add("hidden");
+    }, 2500); // Delay 2.5 detik
+  });
+</script>
+
 
   <!-- Konten Utama -->
   <section class="max-w-md mx-auto px-4 py-10 animate-fadeIn text-center">
