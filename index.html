@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tim Merpati</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: "fadeIn 1s ease-in-out forwards",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: 0, transform: "translateY(20px)" },
+              "100%": { opacity: 1, transform: "translateY(0)" },
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-white min-h-screen font-sans">
+
+  <section class="max-w-7xl mx-auto px-4 py-10 animate-fadeIn">
+    <h1 class="text-4xl font-bold text-center mb-10 text-gray-800">👥 Tim Merpati Kami</h1>
+
+    <!-- Row 1 -->
+    <div class="flex flex-wrap justify-center gap-6 mb-10">
+      <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
+        <img src="https://randomuser.me/api/portraits/men/11.jpg" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
+        <h2 class="text-lg font-bold text-gray-800">Ari Setiawan</h2>
+        <p class="text-gray-500">Petir Malam</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
+        <h2 class="text-lg font-bold text-gray-800">Doni Pratama</h2>
+        <p class="text-gray-500">Elang Putih</p>
+      </div>
+      <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
+        <img src="https://randomuser.me/api/portraits/men/55.jpg" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
+        <h2 class="text-lg font-bold text-gray-800">Raka Nugroho</h2>
+        <p class="text-gray-500">Bintang Timur</p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="logo.html" class="inline-block bg-blue-500 text-white px-6 py-2 rounded-full shadow hover:bg-blue-600 transition">Lihat Logo Tim</a>
+    </div>
+  </section>
+
+</body>
+</html>
