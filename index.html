@@ -1,97 +1,123 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tim Merpati</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          animation: {
-            fadeIn: "fadeIn 1s ease-in-out forwards",
-          },
-          keyframes: {
-            fadeIn: {
-              "0%": { opacity: 0, transform: "translateY(20px)" },
-              "100%": { opacity: 1, transform: "translateY(0)" },
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tim Merpati</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: "fadeIn 1s ease-in-out forwards",
+            fly: "fly 2s ease-in-out infinite",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: 0, transform: "translateY(20px)" },
+              "100%": { opacity: 1, transform: "translateY(0)" },
+            },
+            fly: {
+              "0%": { transform: "translateX(0) translateY(0) scale(1)" },
+              "50%": { transform: "translateX(50px) translateY(-20px) scale(1.1)" },
+              "100%": { transform: "translateX(0) translateY(0) scale(1)" },
+            },
+          }
+        }
+      }
+    }
+  </script>
 </head>
 <body class="bg-gradient-to-br from-blue-100 to-white min-h-screen font-sans relative">
 
-  <section class="max-w-7xl mx-auto px-4 py-10 animate-fadeIn">
-    <h1 class="text-4xl font-bold text-center mb-10 text-gray-800">👥 Tim Merpati Kami</h1>
+  <!-- LOADING SCREEN -->
+  <div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex items-center justify-center flex-col gap-4">
+    <div class="w-24 h-24 animate-fly">
+      <!-- SVG BURUNG -->
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z" fill="#3B82F6"/>
+      </svg>
+    </div>
+    <p class="text-gray-600 text-lg font-medium animate-fadeIn">Memuat halaman...</p>
+  </div>
 
-    <!-- Cards -->
-    <div class="flex flex-wrap justify-center gap-6 mb-10">
-      <!-- Card -->
-      <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
-        <img src="https://files.catbox.moe/a9kykk.png" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
-        <h2 class="text-lg font-bold text-gray-800">depa</h2>
-        <p class="text-gray-500">DAUS PKL</p>
-        <button onclick="openModal('https://files.catbox.moe/t3c3vn.png')" class="text-sm text-blue-600 hover:underline mt-2">Lihat Lebih Besar</button>
-      </div>
+  <section class="max-w-7xl mx-auto px-4 py-10 animate-fadeIn">
+    <h1 class="text-4xl font-bold text-center mb-10 text-gray-800">👥 Tim Merpati Kami</h1>
 
-      <!-- Card -->
-      <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
-        <img src="https://files.catbox.moe/0d4wfk.png" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
-        <h2 class="text-lg font-bold text-gray-800">atar</h2>
-        <p class="text-gray-500">BLACK DIAMOND</p>
-        <button onclick="openModal('https://files.catbox.moe/ahqqka.png')" class="text-sm text-blue-600 hover:underline mt-2">Lihat Lebih Besar</button>
-      </div>
+    <!-- Cards -->
+    <div class="flex flex-wrap justify-center gap-6 mb-10">
+      <!-- Card -->
+      <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
+        <img src="https://files.catbox.moe/a9kykk.png" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
+        <h2 class="text-lg font-bold text-gray-800">depa</h2>
+        <p class="text-gray-500">DAUS PKL</p>
+        <button onclick="openModal('https://files.catbox.moe/t3c3vn.png')" class="text-sm text-blue-600 hover:underline mt-2">Lihat Lebih Besar</button>
+      </div>
 
-      <!-- Card -->
-      <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
-        <img src="https://files.catbox.moe/aw8uv1.png" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
-        <h2 class="text-lg font-bold text-gray-800">fathan</h2>
-        <p class="text-gray-500">RAMPEK</p>
-        <button onclick="openModal('https://files.catbox.moe/mmajxn.png')" class="text-sm text-blue-600 hover:underline mt-2">Lihat Lebih Besar</button>
-      </div>
-    </div>
+      <!-- Card -->
+      <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
+        <img src="https://files.catbox.moe/0d4wfk.png" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
+        <h2 class="text-lg font-bold text-gray-800">atar</h2>
+        <p class="text-gray-500">BLACK DIAMOND</p>
+        <button onclick="openModal('https://files.catbox.moe/ahqqka.png')" class="text-sm text-blue-600 hover:underline mt-2">Lihat Lebih Besar</button>
+      </div>
 
-<div class="text-center space-y-3 mt-6">
-  <a href="logo.html" class="inline-block bg-blue-500 text-white px-6 py-2 rounded-full shadow hover:bg-blue-600 transition">
-    Lihat Logo Tim
-  </a>
-  <a href="list.html" class="inline-block bg-green-500 text-white px-6 py-2 rounded-full shadow hover:bg-green-600 transition">
-    Lihat Daftar Burung
-  </a>
-</div>
+      <!-- Card -->
+      <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
+        <img src="https://files.catbox.moe/aw8uv1.png" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
+        <h2 class="text-lg font-bold text-gray-800">fathan</h2>
+        <p class="text-gray-500">RAMPEK</p>
+        <button onclick="openModal('https://files.catbox.moe/mmajxn.png')" class="text-sm text-blue-600 hover:underline mt-2">Lihat Lebih Besar</button>
+      </div>
+    </div>
 
-  
+    <!-- Tombol navigasi -->
+    <div class="text-center space-y-3 mt-6">
+      <a href="logo.html" class="inline-block bg-blue-500 text-white px-6 py-2 rounded-full shadow hover:bg-blue-600 transition">
+        Lihat Logo Tim
+      </a>
+      <a href="list.html" class="inline-block bg-green-500 text-white px-6 py-2 rounded-full shadow hover:bg-green-600 transition">
+        Lihat Daftar Burung
+      </a>
+    </div>
+  </section>
 
-  <!-- MODAL -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
-    <div class="relative bg-white rounded-lg overflow-hidden max-w-md mx-auto">
-      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl">&times;</button>
-      <img id="modalImg" src="" class="w-full max-h-[80vh] object-contain" />
-    </div>
-  </div>
+  <!-- MODAL -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden max-w-md mx-auto">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl">&times;</button>
+      <img id="modalImg" src="" class="w-full max-h-[80vh] object-contain" />
+    </div>
+  </div>
 
-  <!-- Script Modal -->
-  <script>
-    function openModal(imgUrl) {
-      document.getElementById('modalImg').src = imgUrl;
-      document.getElementById('modal').classList.remove('hidden');
-    }
+  <!-- Script Modal -->
+  <script>
+    function openModal(imgUrl) {
+      document.getElementById('modalImg').src = imgUrl;
+      document.getElementById('modal').classList.remove('hidden');
+    }
 
-    function closeModal() {
-      document.getElementById('modal').classList.add('hidden');
-      document.getElementById('modalImg').src = '';
-    }
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modalImg').src = '';
+    }
 
-    // Optional: tutup modal jika klik luar
-    window.addEventListener('click', function (e) {
-      const modal = document.getElementById('modal');
-      if (e.target === modal) closeModal();
-    });
-  </script>
+    window.addEventListener('click', function (e) {
+      const modal = document.getElementById('modal');
+      if (e.target === modal) closeModal();
+    });
+  </script>
+
+  <!-- Script Loading -->
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loadingScreen").classList.add("hidden");
+      }, 2500);
+    });
+  </script>
 
 </body>
-</html>
+        </html>
+        
