@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tim Merpati</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config & CDN -->
   <script>
     tailwind.config = {
       theme: {
@@ -19,62 +20,44 @@
               "100%": { opacity: 1, transform: "translateY(0)" },
             },
             fly: {
-              "0%": { transform: "translateX(0) translateY(0) scale(1)" },
-              "50%": { transform: "translateX(50px) translateY(-20px) scale(1.1)" },
-              "100%": { transform: "translateX(0) translateY(0) scale(1)" },
+              "0%, 100%": { transform: "translateY(0) scale(1)" },
+              "50%": { transform: "translateY(-10px) scale(1.1)" },
             },
           },
         },
       },
     };
   </script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-br from-blue-100 to-white min-h-screen font-sans relative">
 
-  <!-- LOADING SCREEN -->
-<div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-4">
-  <!-- Merpati SVG dengan animasi terbang -->
-  <div class="w-24 h-24 animate-fly">
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-      <path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z" fill="#000000"/>
-    </svg>
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-4">
+    <div class="w-24 h-24 animate-fly">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z" fill="#000000"/>
+      </svg>
+    </div>
+    <p class="text-gray-600 text-lg font-medium animate-fadeIn">Memuat halaman...</p>
   </div>
-  <p class="text-gray-600 text-lg font-medium animate-fadeIn">Memuat halaman...</p>
-</div>
 
-<!-- Tailwind CSS Custom Animation -->
+  <!-- Efek suara whoosh -->
+<audio id="whooshSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_42471bba2f.mp3?filename=whoosh-transition-2-109437.mp3" preload="auto"></audio>
+
 <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        animation: {
-          fadeIn: "fadeIn 1s ease-in-out forwards",
-          fly: "fly 2s ease-in-out infinite",
-        },
-        keyframes: {
-          fadeIn: {
-            "0%": { opacity: 0, transform: "translateY(10px)" },
-            "100%": { opacity: 1, transform: "translateY(0)" },
-          },
-          fly: {
-            "0%, 100%": { transform: "translateY(0) scale(1)" },
-            "50%": { transform: "translateY(-10px) scale(1.1)" },
-          },
-        },
-      },
-    },
-  };
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("loadingScreen").classList.add("hidden");
+      const whoosh = document.getElementById("whooshSound");
+      if (whoosh) {
+        whoosh.volume = 0.5;
+        whoosh.play().catch(e => console.warn("Auto-play blocked:", e));
+      }
+    }, 2500);
+  });
 </script>
-
-<!-- Script to hide loading after page load -->
-<script>
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      document.getElementById("loadingScreen").classList.add("hidden");
-    }, 2500); // Delay 2.5 detik
-  });
-</script>
-
+  
 
   <!-- Konten Utama -->
   <section class="max-w-md mx-auto px-4 py-10 animate-fadeIn text-center">
@@ -115,13 +98,12 @@
         Lihat Logo Tim
       </a>
       <a href="list.html" class="bg-green-600 text-white rounded-full px-6 py-3 w-full shadow hover:bg-green-700 transition duration-300">
-  Lihat Daftar Burung
-</a>
-
+        Lihat Daftar Burung
+      </a>
     </div>
   </section>
 
-  <!-- Modal -->
+  <!-- Modal Gambar -->
   <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
     <div class="relative bg-white rounded-lg overflow-hidden max-w-md mx-auto">
       <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl">&times;</button>
@@ -146,7 +128,7 @@
     });
   </script>
 
-  <!-- Script Loading -->
+  <!-- Script Loading Screen -->
   <script>
     window.addEventListener("load", () => {
       setTimeout(() => {
