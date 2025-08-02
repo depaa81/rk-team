@@ -4,58 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tim Merpati</title>
-
-  <!-- Tailwind Config & CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           animation: {
             fadeIn: "fadeIn 1s ease-in-out forwards",
-            fly: "fly 2s ease-in-out infinite",
+            fly1: "fly1 1s ease-in forwards",
+            fly2: "fly2 1s ease-in forwards",
+            fly3: "fly3 1s ease-in forwards",
+            fly4: "fly4 1s ease-in forwards"
           },
           keyframes: {
             fadeIn: {
-              "0%": { opacity: 0, transform: "translateY(20px)" },
+              "0%": { opacity: 0, transform: "translateY(10px)" },
               "100%": { opacity: 1, transform: "translateY(0)" },
             },
-            fly: {
-              "0%, 100%": { transform: "translateY(0) scale(1)" },
-              "50%": { transform: "translateY(-10px) scale(1.1)" },
+            fly1: {
+              "0%": { transform: "translate(0, 0)", opacity: 1 },
+              "100%": { transform: "translate(-200px, -200px)", opacity: 0 },
+            },
+            fly2: {
+              "0%": { transform: "translate(0, 0)", opacity: 1 },
+              "100%": { transform: "translate(200px, -200px)", opacity: 0 },
+            },
+            fly3: {
+              "0%": { transform: "translate(0, 0)", opacity: 1 },
+              "100%": { transform: "translate(-200px, 200px)", opacity: 0 },
+            },
+            fly4: {
+              "0%": { transform: "translate(0, 0)", opacity: 1 },
+              "100%": { transform: "translate(200px, 200px)", opacity: 0 },
             },
           },
         },
       },
     };
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-br from-blue-100 to-white min-h-screen font-sans relative">
 
-  <!-- Loading Screen -->
-  <div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-4">
-    <div class="w-24 h-24 animate-fly">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-        <path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z" fill="#000000"/>
-      </svg>
-    </div>
-    <p class="text-gray-600 text-lg font-medium animate-fadeIn">Memuat halaman...</p>
+<!-- 🔁 LOADING SCREEN -->
+<div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-4">
+  <div class="relative w-40 h-40">
+    <!-- 4 Merpati SVG -->
+    <div id="bird1" class="absolute w-10 h-10"><svg viewBox="0 0 64 64" fill="black"><path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z"/></svg></div>
+    <div id="bird2" class="absolute w-10 h-10 top-0 right-0"><svg viewBox="0 0 64 64" fill="black"><path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z"/></svg></div>
+    <div id="bird3" class="absolute w-10 h-10 bottom-0 left-0"><svg viewBox="0 0 64 64" fill="black"><path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z"/></svg></div>
+    <div id="bird4" class="absolute w-10 h-10 bottom-0 right-0"><svg viewBox="0 0 64 64" fill="black"><path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z"/></svg></div>
   </div>
+  <p class="text-gray-600 text-lg font-medium animate-fadeIn">Memuat halaman...</p>
+</div>
 
-  <!-- Efek suara whoosh -->
-<audio id="whooshSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_42471bba2f.mp3?filename=whoosh-transition-2-109437.mp3" preload="auto"></audio>
+<!-- 🔊 Suara Whoosh -->
+<audio id="whooshSound" src="https://cdn.pixabay.com/audio/2021/08/04/audio_d1e4b7b147.mp3"></audio>
 
+<!-- ✅ Script untuk hide loading dan animasi -->
 <script>
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      document.getElementById("loadingScreen").classList.add("hidden");
-      const whoosh = document.getElementById("whooshSound");
-      if (whoosh) {
-        whoosh.volume = 0.5;
-        whoosh.play().catch(e => console.warn("Auto-play blocked:", e));
-      }
-    }, 2500);
-  });
+window.addEventListener("load", () => {
+  const bird1 = document.getElementById("bird1");
+  const bird2 = document.getElementById("bird2");
+  const bird3 = document.getElementById("bird3");
+  const bird4 = document.getElementById("bird4");
+
+  // Tambahkan animasi "terbang keluar"
+  bird1.classList.add("animate-fly1");
+  bird2.classList.add("animate-fly2");
+  bird3.classList.add("animate-fly3");
+  bird4.classList.add("animate-fly4");
+
+  // Mainkan suara
+  const sound = document.getElementById("whooshSound");
+  sound.play().catch(() => { /* autoplay dibatasi */ });
+
+  // Sembunyikan loading screen
+  setTimeout(() => {
+    document.getElementById("loadingScreen").classList.add("hidden");
+  }, 1200); // setelah animasi selesai
+});
 </script>
   
 
