@@ -23,27 +23,35 @@
     }
   </script>
 </head>
-<body class="bg-gradient-to-br from-blue-100 to-white min-h-screen font-sans">
+<body class="bg-gradient-to-br from-blue-100 to-white min-h-screen font-sans relative">
 
   <section class="max-w-7xl mx-auto px-4 py-10 animate-fadeIn">
     <h1 class="text-4xl font-bold text-center mb-10 text-gray-800">👥 Tim Merpati Kami</h1>
 
-    <!-- Row 1 -->
+    <!-- Cards -->
     <div class="flex flex-wrap justify-center gap-6 mb-10">
+      <!-- Card -->
       <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
         <img src="https://files.catbox.moe/t3c3vn.png" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
         <h2 class="text-lg font-bold text-gray-800">depa</h2>
         <p class="text-gray-500">DAUS PKL</p>
+        <button onclick="openModal('https://files.catbox.moe/t3c3vn.png')" class="text-sm text-blue-600 hover:underline mt-2">Lihat Lebih Besar</button>
       </div>
+
+      <!-- Card -->
       <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
         <img src="https://files.catbox.moe/ahqqka.png" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
         <h2 class="text-lg font-bold text-gray-800">atar</h2>
         <p class="text-gray-500">BLACK DIAMOND</p>
+        <button onclick="openModal('https://files.catbox.moe/ahqqka.png')" class="text-sm text-blue-600 hover:underline mt-2">Lihat Lebih Besar</button>
       </div>
+
+      <!-- Card -->
       <div class="bg-white shadow-lg rounded-xl p-4 w-60 text-center">
         <img src="https://files.catbox.moe/mmajxn.png" class="w-24 h-24 rounded-full mx-auto mb-2 object-cover" />
         <h2 class="text-lg font-bold text-gray-800">fathan</h2>
         <p class="text-gray-500">RAMPEK</p>
+        <button onclick="openModal('https://files.catbox.moe/mmajxn.png')" class="text-sm text-blue-600 hover:underline mt-2">Lihat Lebih Besar</button>
       </div>
     </div>
 
@@ -51,6 +59,33 @@
       <a href="logo.html" class="inline-block bg-blue-500 text-white px-6 py-2 rounded-full shadow hover:bg-blue-600 transition">Lihat Logo Tim</a>
     </div>
   </section>
+
+  <!-- MODAL -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden max-w-md mx-auto">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl">&times;</button>
+      <img id="modalImg" src="" class="w-full max-h-[80vh] object-contain" />
+    </div>
+  </div>
+
+  <!-- Script Modal -->
+  <script>
+    function openModal(imgUrl) {
+      document.getElementById('modalImg').src = imgUrl;
+      document.getElementById('modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modalImg').src = '';
+    }
+
+    // Optional: tutup modal jika klik luar
+    window.addEventListener('click', function (e) {
+      const modal = document.getElementById('modal');
+      if (e.target === modal) closeModal();
+    });
+  </script>
 
 </body>
 </html>
