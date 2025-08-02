@@ -8,25 +8,25 @@ export default function Home() {
     {
       name: "Andi Saputra",
       role: "Frontend Developer",
-      image: "/team/andi.jpg",
+      image: "https://i.imgur.com/abc123.jpg", // ganti dengan link foto Andi
       description: "Ahli membuat tampilan website yang modern, responsif, dan user-friendly.",
     },
     {
       name: "Budi Santoso",
       role: "Backend Developer",
-      image: "/team/budi.jpg",
+      image: "https://i.imgur.com/def456.jpg", // ganti dengan link foto Budi
       description: "Mengembangkan sistem backend yang aman, cepat, dan dapat di-scale.",
     },
     {
       name: "Citra Dewi",
       role: "UI/UX Designer",
-      image: "/team/citra.jpg",
+      image: "https://i.imgur.com/ghi789.jpg", // ganti dengan link foto Citra
       description: "Merancang pengalaman pengguna yang intuitif dengan desain yang elegan.",
     },
     {
       name: "Deni Pratama",
       role: "Project Manager",
-      image: "/team/deni.jpg",
+      image: "https://i.imgur.com/jkl012.jpg", // ganti dengan link foto Deni
       description: "Memimpin tim untuk menyelesaikan proyek tepat waktu dengan hasil terbaik.",
     },
   ];
