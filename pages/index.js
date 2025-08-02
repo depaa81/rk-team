@@ -6,21 +6,21 @@ export default function Home() {
 
   const teamMembers = [
     {
-      name: "Andi Saputra",
-      role: "Frontend Developer",
-      image: "https://i.imgur.com/abc123.jpg", // ganti dengan link foto Andi
+      name: "depa",
+      role: "DAUS PKL",
+      image: "https://files.catbox.moe/t3c3vn.png", // ganti dengan link foto Andi
       description: "Ahli membuat tampilan website yang modern, responsif, dan user-friendly.",
     },
     {
-      name: "Budi Santoso",
-      role: "Backend Developer",
-      image: "https://i.imgur.com/def456.jpg", // ganti dengan link foto Budi
+      name: "atar",
+      role: "BLACK DIAMOND",
+      image: "https://files.catbox.moe/ahqqka.png", // ganti dengan link foto Budi
       description: "Mengembangkan sistem backend yang aman, cepat, dan dapat di-scale.",
     },
     {
-      name: "Citra Dewi",
-      role: "UI/UX Designer",
-      image: "https://i.imgur.com/ghi789.jpg", // ganti dengan link foto Citra
+      name: "fathan",
+      role: "RAMPEK",
+      image: "https://files.catbox.moe/mmajxn.png", // ganti dengan link foto Citra
       description: "Merancang pengalaman pengguna yang intuitif dengan desain yang elegan.",
     },
     {
