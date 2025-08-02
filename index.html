@@ -1,143 +1,123 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tim Merpati</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          animation: {
-            fadeIn: "fadeIn 1s ease-in-out forwards",
-            fly: "fly 2s ease-in-out infinite",
-          },
-          keyframes: {
-            fadeIn: {
-              "0%": { opacity: 0, transform: "translateY(20px)" },
-              "100%": { opacity: 1, transform: "translateY(0)" },
-            },
-            fly: {
-              "0%": { transform: "translateX(0) translateY(0) scale(1)" },
-              "50%": { transform: "translateX(50px) translateY(-20px) scale(1.1)" },
-              "100%": { transform: "translateX(0) translateY(0) scale(1)" },
-            },
-          }
-        }
-      }
-    }
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tim Merpati</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: "fadeIn 1s ease-in-out forwards",
+            fly: "fly 2s ease-in-out infinite",
+          },
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: 0, transform: "translateY(20px)" },
+              "100%": { opacity: 1, transform: "translateY(0)" },
+            },
+            fly: {
+              "0%": { transform: "translateX(0) translateY(0) scale(1)" },
+              "50%": { transform: "translateX(50px) translateY(-20px) scale(1.1)" },
+              "100%": { transform: "translateX(0) translateY(0) scale(1)" },
+            },
+          },
+        },
+      },
+    };
+  </script>
 </head>
 <body class="bg-gradient-to-br from-blue-100 to-white min-h-screen font-sans relative">
 
-  <!-- LOADING SCREEN -->
-  <div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex items-center justify-center flex-col gap-4">
-    <div class="w-24 h-24 animate-fly">
-      <!-- SVG BURUNG -->
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-        <path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z" fill="#3B82F6"/>
-      </svg>
-    </div>
-    <p class="text-gray-600 text-lg font-medium animate-fadeIn">Memuat halaman...</p>
-  </div>
-
-  <section class="max-w-7xl mx-auto px-4 py-10 animate-fadeIn">
-    <h1 class="text-4xl font-bold text-center mb-10 text-gray-800">👥 Tim Merpati Kami</h1>
-
-    <!-- Cards -->
-  <div class="flex flex-col items-center min-h-screen bg-gradient-to-r from-blue-100 to-white pt-10 space-y-6">
-  <!-- Kartu Tim -->
-  <div class="bg-white rounded-2xl shadow-lg p-6 w-80 text-center">
-    <img src="logo-tim.jpg" alt="Logo Tim" class="w-24 h-24 mx-auto rounded-full mb-4">
-    <h2 class="text-xl font-bold">atar</h2>
-    <p class="text-gray-500">BLACK DIAMOND</p>
-    <a href="#" class="text-blue-600 mt-2 inline-block">Lihat Lebih Besar</a>
+  <!-- LOADING SCREEN -->
+  <div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex items-center justify-center flex-col gap-4">
+    <div class="w-24 h-24 animate-fly">
+      <!-- SVG BURUNG -->
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <path d="M2 24C12 28 18 30 22 30C20 22 30 8 44 8C52 8 54 10 62 18C58 20 50 24 48 28C54 28 58 32 60 34C56 36 44 40 38 38C30 44 22 48 14 50C12 46 10 38 2 24Z" fill="#3B82F6"/>
+      </svg>
+    </div>
+    <p class="text-gray-600 text-lg font-medium animate-fadeIn">Memuat halaman...</p>
   </div>
 
-  <!-- Kartu Tim -->
-  <div class="bg-white rounded-2xl shadow-lg p-6 w-80 text-center">
-    <img src="logo-tim-2.jpg" alt="Logo Tim" class="w-24 h-24 mx-auto rounded-full mb-4">
-    <h2 class="text-xl font-bold">fathan</h2>
-    <p class="text-gray-500">RAMPEK</p>
-    <a href="#" class="text-blue-600 mt-2 inline-block">Lihat Lebih Besar</a>
+  <!-- Konten Utama -->
+  <section class="max-w-md mx-auto px-4 py-10 animate-fadeIn text-center">
+    <h1 class="text-3xl font-bold text-gray-800 mb-10">👥 Tim Merpati Kami</h1>
+
+    <!-- Kartu Anggota Tim -->
+    <div class="space-y-6 mb-10">
+
+      <!-- Kartu 1 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <img src="https://files.catbox.moe/a9kykk.png" alt="Logo Tim" class="w-24 h-24 mx-auto rounded-full mb-4">
+        <h2 class="text-xl font-bold">depa</h2>
+        <p class="text-gray-500">DAUS PKL</p>
+        <a href="#" class="text-blue-600 mt-2 inline-block">Lihat Lebih Besar</a>
+      </div
+      
+      <!-- Kartu 2 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <img src="https://files.catbox.moe/0d4wfk.png" alt="Logo Tim" class="w-24 h-24 mx-auto rounded-full mb-4">
+        <h2 class="text-xl font-bold">atar</h2>
+        <p class="text-gray-500">BLACK DIAMOND</p>
+        <a href="#" class="text-blue-600 mt-2 inline-block">Lihat Lebih Besar</a>
+      </div>
+
+      <!-- Kartu 3 -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <img src="https://files.catbox.moe/aw8uv1.png" alt="Logo Tim 2" class="w-24 h-24 mx-auto rounded-full mb-4">
+        <h2 class="text-xl font-bold">fathan</h2>
+        <p class="text-gray-500">RAMPEK</p>
+        <a href="#" class="text-blue-600 mt-2 inline-block">Lihat Lebih Besar</a>
+      </div>
+    </div>
+
+    <!-- Tombol Navigasi -->
+    <div class="flex flex-col items-center space-y-3">
+      <a href="logo.html" class="bg-blue-600 text-white rounded-full px-6 py-3 w-full shadow hover:bg-blue-700 transition duration-300">
+        Lihat Logo Tim
+      </a>
+      <a href="daftar.html" class="bg-green-600 text-white rounded-full px-6 py-3 w-full shadow hover:bg-green-700 transition duration-300">
+        Lihat Daftar Burung
+      </a>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden max-w-md mx-auto">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl">&times;</button>
+      <img id="modalImg" src="" class="w-full max-h-[80vh] object-contain" />
+    </div>
   </div>
 
-  <!-- Tombol Navigasi -->
-  <div class="flex flex-col space-y-4 pt-6">
-    <a href="logo.html" class="bg-blue-600 text-white rounded-full px-6 py-3 text-center shadow hover:bg-blue-700 transition duration-300">
-      Lihat Logo Tim
-    </a>
-    <a href="daftar.html" class="bg-green-600 text-white rounded-full px-6 py-3 text-center shadow hover:bg-green-700 transition duration-300">
-      Lihat Daftar Burung
-    </a>
-  </div>
-</div>
-<div class="flex flex-col items-center min-h-screen bg-gradient-to-r from-blue-100 to-white pt-10 space-y-6">
-  <!-- Kartu Tim -->
-  <div class="bg-white rounded-2xl shadow-lg p-6 w-80 text-center">
-    <img src="logo-tim.jpg" alt="Logo Tim" class="w-24 h-24 mx-auto rounded-full mb-4">
-    <h2 class="text-xl font-bold">atar</h2>
-    <p class="text-gray-500">BLACK DIAMOND</p>
-    <a href="#" class="text-blue-600 mt-2 inline-block">Lihat Lebih Besar</a>
-  </div>
+  <!-- Script Modal -->
+  <script>
+    function openModal(imgUrl) {
+      document.getElementById('modalImg').src = imgUrl;
+      document.getElementById('modal').classList.remove('hidden');
+    }
 
-  <!-- Kartu Tim -->
-  <div class="bg-white rounded-2xl shadow-lg p-6 w-80 text-center">
-    <img src="logo-tim-2.jpg" alt="Logo Tim" class="w-24 h-24 mx-auto rounded-full mb-4">
-    <h2 class="text-xl font-bold">fathan</h2>
-    <p class="text-gray-500">RAMPEK</p>
-    <a href="#" class="text-blue-600 mt-2 inline-block">Lihat Lebih Besar</a>
-  </div>
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modalImg').src = '';
+    }
 
-  <!-- Tombol Navigasi -->
-  <div class="flex flex-col space-y-4 pt-6">
-    <a href="logo.html" class="bg-blue-600 text-white rounded-full px-6 py-3 text-center shadow hover:bg-blue-700 transition duration-300">
-      Lihat Logo Tim
-    </a>
-    <a href="daftar.html" class="bg-green-600 text-white rounded-full px-6 py-3 text-center shadow hover:bg-green-700 transition duration-300">
-      Lihat Daftar Burung
-    </a>
-  </div>
-</div>
-          
-  </section>
+    window.addEventListener('click', function (e) {
+      if (e.target.id === 'modal') closeModal();
+    });
+  </script>
 
-  <!-- MODAL -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
-    <div class="relative bg-white rounded-lg overflow-hidden max-w-md mx-auto">
-      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl">&times;</button>
-      <img id="modalImg" src="" class="w-full max-h-[80vh] object-contain" />
-    </div>
-  </div>
-
-  <!-- Script Modal -->
-  <script>
-    function openModal(imgUrl) {
-      document.getElementById('modalImg').src = imgUrl;
-      document.getElementById('modal').classList.remove('hidden');
-    }
-
-    function closeModal() {
-      document.getElementById('modal').classList.add('hidden');
-      document.getElementById('modalImg').src = '';
-    }
-
-    window.addEventListener('click', function (e) {
-      const modal = document.getElementById('modal');
-      if (e.target === modal) closeModal();
-    });
-  </script>
-
-  <!-- Script Loading -->
-  <script>
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.getElementById("loadingScreen").classList.add("hidden");
-      }, 2500);
-    });
-  </script>
+  <!-- Script Loading -->
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loadingScreen").classList.add("hidden");
+      }, 2500);
+    });
+  </script>
 
 </body>
-        </html>
-        
+</html>
